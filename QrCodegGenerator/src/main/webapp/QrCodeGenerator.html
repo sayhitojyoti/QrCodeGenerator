@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+    
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1E2A78, #00D4FF);
+            color: white;
+        }
+
+        /* Glassmorphism Card */
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 350px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Heading */
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        /* Form elements */
+        label {
+            font-weight: bold;
+            color: #fff;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        input:focus {
+            border: 2px solid #00D4FF;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Button styling */
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #007BFF, #00D4FF);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 212, 255, 0.3);
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #0056b3, #0088cc);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Subtle Fade-in Animation */
+        .container {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>✨ QR Code Generator ✨</h2>
+        <form action="QRCodeGeneratorServlet" method="post">
+            <label>Enter Text or URL:</label>
+            <input type="text" name="data" placeholder="Type here..." required>
+            <button type="submit">🚀 Generate QR Code</button>
+        </form>
+    </div>
+</body>
+</html>
